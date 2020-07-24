@@ -12,6 +12,7 @@
         android:layout_height="334dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.681">
@@ -37,7 +38,7 @@
             android:orientation="horizontal">
 
 
-        <EditText
+            <EditText
                 android:id="@+id/email"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
@@ -51,7 +52,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-        <EditText
+            <EditText
                 android:id="@+id/password"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
@@ -82,26 +83,14 @@
 
             <Button
                 android:id="@+id/btn_add"
-                android:backgroundTint="@color/colorPrimary"
-                android:textColor="@android:color/white"
-                android:text="Register"
-                android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
-                android:enabled="false"
-                android:layout_height="55dp" />
-            <!--
-            <Button
-                android:id="@+id/btn_add"
-                android:layout_width="wrap_content"
-                android:layout_height="38dp"
-                android:layout_gravity="start"
-                android:layout_marginStart="48dp"
+                android:layout_height="55dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginEnd="48dp"
-                android:layout_marginBottom="136dp"
-                android:background="@drawable/adduserbtn"
-                app:layout_constraintTop_toTopOf="parent" />
-                -->
+                android:backgroundTint="@color/colorPrimary"
+                android:enabled="false"
+                android:text="Enregistrer"
+                android:textColor="@android:color/white" />
+
         </LinearLayout>
 
     </LinearLayout>

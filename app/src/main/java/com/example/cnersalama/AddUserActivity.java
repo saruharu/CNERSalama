@@ -32,7 +32,7 @@ public class AddUserActivity extends AppCompatActivity {
     private EditText name, email, password, c_password;
     private Button btn_add;
     //private ProgressBar loading;
-    private static String URL_ADD = "http://192.168.43.26/Salama/register.php";
+    private static String URL_ADD = "https://salamacner.000webhostapp.com/register.php";
 
 
 

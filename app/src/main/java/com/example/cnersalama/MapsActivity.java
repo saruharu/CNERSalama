@@ -1,9 +1,13 @@
 package com.example.cnersalama;
 
+import android.content.Context;
 import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.text.format.Formatter;
 import android.util.Log;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -29,7 +33,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.math.BigInteger;
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.UnknownHostException;
+import java.nio.ByteOrder;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 
 
@@ -53,8 +65,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public static final String NBR_BLL= "NBR_BLL";
     public static final String NBR_BLG= "NBR_BLG";
 
-    private static String URL_MARKERS = "http://192.168.43.26/android/markers.php";
-    private static String URL_ACCIDENTS = "http://192.168.43.26/android/routes.php";
+
+
+    private static String URL_MARKERS = "https://salamacner.000webhostapp.com/markers.php";
 
     private String url = "https://wisatademak.dedykuncoro.com/Main/json_wisata";
 
@@ -64,13 +77,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     ArrayList<String> titles = new ArrayList<String>();
 
+    Context context = this;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
         //link to xml View
-        mapFragment = (SupportMapFragment)  (SupportMapFragment) getSupportFragmentManager()
+        mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         searchView = findViewById(R.id.svlocation);
 
@@ -161,7 +178,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                            final String acc, final String injured, final String srsinjured ) {
         markerOptions.position(latlng);
         markerOptions.title(title);
-        markerOptions.snippet(kills+"AND"+acc+"AND"+injured+"AND"+srsinjured);
+        markerOptions.snippet("Nombre d'accidents: " +acc+
+				"\nNombre de tués: "+kills+	
+				"\nNombre de blessés légers: "+injured+
+				"\nNombre de blessés graves: "+srsinjured);
         gMap.addMarker(markerOptions);
 
         System.out.println("kills1"+kills);

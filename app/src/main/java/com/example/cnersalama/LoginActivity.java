@@ -32,7 +32,8 @@ public class LoginActivity extends AppCompatActivity {
     private Button btn_login;
     private TextView link_regist;
     private ProgressBar loading;
-    private static String URL_LOGIN = "http://192.168.43.26/Salama/login.php";
+    private static String URL_LOGIN = "https://salamacner.000webhostapp.com/login.php";
+    Intent intent;
     SessionManager sessionManager;
 
     @Override
@@ -95,16 +96,31 @@ public class LoginActivity extends AppCompatActivity {
                                     String name = object.getString("name").trim();
                                     String email = object.getString("email").trim();
                                     String id = object.getString("id").trim();
-
+				                    Integer profile = Integer.valueOf(object.getString("profile").trim());
+				                    System.out.println("profile: "+profile);
                                     sessionManager.createSession(name, email, id);
+                                    Integer test=1;
 
-                                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                    intent.putExtra("name", name);
-                                    intent.putExtra("email", email);
-                                    startActivity(intent);
+                                    if(profile==0 ){
+                                        intent = new Intent(LoginActivity.this, MapsActivity.class);
+                                        intent.putExtra("name", name);
+                                        intent.putExtra("email", email);
+                                        startActivity(intent);
+                                    }
+                                    if(profile==1){
+                                        intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                        intent.putExtra("name", name);
+                                        intent.putExtra("email", email);
+                                        startActivity(intent);
+
+
+                                    }
+
+
                                     finish();
 
                                     loading.setVisibility(View.GONE);
+
 
 
                                 }

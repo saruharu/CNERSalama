@@ -32,7 +32,7 @@ public class UpdateUserActivity extends AppCompatActivity {
     private Button btn_edit;
     SessionManager sessionManager;
 
-    private static String URL_EDIT = "http://192.168.43.26/Salama/edit_detail.php";
+    private static String URL_EDIT = "https://salamacner.000webhostapp.com/edit_detail.php";
     private Bitmap bitmap;
 
 

@@ -18,7 +18,7 @@
         android:orientation="horizontal">
         <EditText
             android:id="@+id/name"
-            android:hint="Name"
+            android:hint="Nom"
             android:inputType="textPersonName"
             android:textColor="@color/colorText"
             android:layout_width="match_parent"
@@ -44,7 +44,7 @@
         android:orientation="horizontal">
         <EditText
             android:id="@+id/password"
-            android:hint="Password"
+            android:hint="Mot de passe"
             android:inputType="textPassword"
             android:textColor="@color/colorText"
             android:layout_width="match_parent"
@@ -57,7 +57,7 @@
         android:orientation="horizontal">
         <EditText
             android:id="@+id/c_password"
-            android:hint="Confrim Password"
+            android:hint="Confirmer le mot de passe"
             android:inputType="textPassword"
             android:textColor="@color/colorText"
             android:layout_width="match_parent"
@@ -75,7 +75,7 @@
         android:id="@+id/btn_regist"
         android:backgroundTint="@color/colorPrimary"
         android:textColor="@android:color/white"
-        android:text="Register"
+        android:text="S'enregistrer"
         android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="55dp" />

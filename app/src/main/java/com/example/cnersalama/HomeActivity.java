@@ -48,9 +48,9 @@ public class HomeActivity extends AppCompatActivity {
 
     SessionManager sessionManager;
     String getId;
-    private static String URL_READ = "http://192.168.43.26/Salama/read_detail.php";
-    private static String URL_EDIT = "http://192.168.43.26/Salama/edit_detail.php";
-    private static String URL_UPLOAD = "http://192.168.43.26/Salama/upload.php";
+    private static String URL_READ = "https://salamacner.000webhostapp.com/read_detail.php";
+    private static String URL_EDIT = "https://salamacner.000webhostapp.com/edit_detail.php";
+    private static String URL_UPLOAD = "https://salamacner.000webhostapp.com/upload.php";
     private Menu action;
     private Bitmap bitmap;
     CircleImageView profile_image;

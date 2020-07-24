@@ -29,7 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText name, email, password, c_password;
     private Button btn_regist;
     private ProgressBar loading;
-    private static String URL_REGIST = "http://192.168.43.26/Salama/register.php";
+    private static String URL_REGIST = "https://salamacner.000webhostapp.com/register.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +69,7 @@ public class RegisterActivity extends AppCompatActivity {
                             String success = jsonObject.getString("success");
 
                             if (success.equals("1")) {
-                                Toast.makeText(RegisterActivity.this, "Register Success!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "Compte Créé!", Toast.LENGTH_SHORT).show();
                             }
 
 
@@ -97,6 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
                 params.put("name", name);
                 params.put("email", email);
                 params.put("password", password);
+                params.put("profile", "USER");
                 return params;
             }
         };
